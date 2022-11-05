@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: game-session
+spec:
+  selector:
+  matchLabels:
+    app: game-session
+  template:
+  metadata:
+    labels:
+      app: game-session
+  spec:
+    containers:
+    - name: game-session
+      image: $GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORIO/$IMAGE:$GITHUB_SHA
+      ports:
+      - name: game
+        containerPort: 1000
+        protocol: TCP

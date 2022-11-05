@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Items/Resource/inventory_item.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+has_item = false
+item_id = 0
+store_position = 0
+quantity = 0

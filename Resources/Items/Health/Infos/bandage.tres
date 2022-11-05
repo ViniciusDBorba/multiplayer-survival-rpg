@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Items/Resource/HealthItemResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+item_id = "bandage"
+item_name = "Bandages"
+can_use_item = true
+item_max_stack = 3
+type = 1
+health_quantity = 30.0

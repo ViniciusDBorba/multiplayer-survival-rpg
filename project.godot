@@ -1,0 +1,84 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Factions",
+"language": "GDScript",
+"path": "res://Scripts/Player/EnumPlayerFactions.gd"
+}, {
+"base": "Node",
+"class": "Handler",
+"language": "GDScript",
+"path": "res://player/handler_machine/handler.gd"
+}, {
+"base": "Node",
+"class": "HandlerMachine",
+"language": "GDScript",
+"path": "res://player/handler_machine/handler_machine.gd"
+}, {
+"base": "Handler",
+"class": "ItemHandler",
+"language": "GDScript",
+"path": "res://player/handlers/item/item_handler.gd"
+}, {
+"base": "Resource",
+"class": "ItemResource",
+"language": "GDScript",
+"path": "res://Scripts/Items/Resource/ItemResource.gd"
+}, {
+"base": "State",
+"class": "Motion",
+"language": "GDScript",
+"path": "res://player/states/motion/motion.gd"
+}, {
+"base": "Motion",
+"class": "OnGround",
+"language": "GDScript",
+"path": "res://player/states/motion/on_ground/on_ground.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://state_machine/state.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://state_machine/state_machine.gd"
+} ]
+_global_script_class_icons={
+"Factions": "",
+"Handler": "",
+"HandlerMachine": "",
+"ItemHandler": "",
+"ItemResource": "",
+"Motion": "",
+"OnGround": "",
+"State": "",
+"StateMachine": ""
+}
+
+[application]
+
+config/name="Multiplayer Survival Rpg"
+config/icon="res://icon.png"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Utils/Resources/language_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+default = "Default"
+bandage = "Bandage"
+militaries = "Militaries"
+outlaws = "Outlaws"
+renegades = "Renegades"
+ready = "Ready"
+play = "Play"
+game_status = "Waiting for players..."
+game_title = "Zombie Waves"
+select_fac = "Select your faction"
+name = "Name"
+health = "Health"
+prototype_pistol = "Prototype pistol"
+hold = "Hold"
+use = "Use"
+equip = "Equip"
+to_collect = "to collect"
+hold_for = "Hold for"
+server_ip = "Server ip"
+host_server = "Host server"
+connect_server = "Connect to server"
+player_count_title = "Ready  /  Connected"

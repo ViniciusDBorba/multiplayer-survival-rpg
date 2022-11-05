@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Utils/Resources/language_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+default = "Padrão"
+bandage = "Bandagem"
+militaries = "Militares"
+outlaws = "Foras da lei"
+renegades = "Renegados"
+ready = "Pronto"
+play = "Jogar"
+game_status = "Aguardando jogadores"
+game_title = "Zombie Waves"
+select_fac = "Selecione a facção"
+name = "Nome"
+health = "Saúde"

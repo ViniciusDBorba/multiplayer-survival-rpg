@@ -1,0 +1,81 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://player/weapon_slot_controller.gd" type="Script" id=1]
+[ext_resource path="res://player/player_controller.gd" type="Script" id=2]
+[ext_resource path="res://player/player_state_machine.gd" type="Script" id=3]
+[ext_resource path="res://player/states/motion/on_ground/move.gd" type="Script" id=4]
+[ext_resource path="res://player/states/motion/on_ground/idle.gd" type="Script" id=5]
+[ext_resource path="res://player/states/combat/attack.gd" type="Script" id=6]
+[ext_resource path="res://player/handlers/item/inventory_handler.gd" type="Script" id=7]
+[ext_resource path="res://player/handlers/item/pockets_handler.gd" type="Script" id=8]
+[ext_resource path="res://player/handlers/item/equipment/weapon_handler.gd" type="Script" id=9]
+[ext_resource path="res://player/handlers/health/health_handler.gd" type="Script" id=10]
+[ext_resource path="res://player/states/die.gd" type="Script" id=11]
+[ext_resource path="res://player/player_handler_controller.gd" type="Script" id=12]
+[ext_resource path="res://player/states/respawn.gd" type="Script" id=13]
+
+[sub_resource type="CapsuleMesh" id=1]
+radius = 0.5
+
+[sub_resource type="CapsuleShape" id=2]
+margin = 0.001
+radius = 0.5
+
+[node name="Player" type="KinematicBody" groups=["player"]]
+script = ExtResource( 2 )
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource( 5 )
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource( 4 )
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource( 6 )
+
+[node name="Die" type="Node" parent="StateMachine"]
+script = ExtResource( 11 )
+
+[node name="Respawn" type="Node" parent="StateMachine"]
+script = ExtResource( 13 )
+
+[node name="HandlerController" type="Node" parent="."]
+script = ExtResource( 12 )
+
+[node name="HealthHandler" type="Node" parent="HandlerController"]
+script = ExtResource( 10 )
+
+[node name="WeaponHandler" type="Node" parent="HandlerController"]
+script = ExtResource( 9 )
+
+[node name="InventoryHandler" type="Node" parent="HandlerController"]
+script = ExtResource( 7 )
+
+[node name="PocketsHandler" type="Node" parent="HandlerController/InventoryHandler"]
+script = ExtResource( 8 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( -2.18557e-08, 0, -1, 0, 0.5, 0, 0.5, 0, -4.37114e-08, 0, 0.136347, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../MeshInstance")
+
+[node name="WeaponSlot" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.685, 0.336, -0.7 )
+script = ExtResource( 1 )
+
+[node name="HolsterSlot" type="Position3D" parent="."]
+transform = Transform( 0.984808, 0.173648, -7.5904e-09, 0, -4.37114e-08, -1, -0.173648, 0.984808, -4.30473e-08, 0.522972, -0.482039, -0.170343 )
+
+[connection signal="start_acting" from="." to="HandlerController/InventoryHandler" method="_on_Player_start_acting"]
+[connection signal="stop_acting" from="." to="HandlerController/InventoryHandler" method="_on_Player_stop_acting"]

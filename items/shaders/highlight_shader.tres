@@ -1,0 +1,39 @@
+[gd_resource type="VisualShader" load_steps=2 format=2]
+
+[sub_resource type="VisualShaderNodeColorOp" id=1]
+output_port_for_preview = 0
+default_input_values = [ 0, Vector3( 0, 50, 0 ), 1, Vector3( 0, 0, 0 ) ]
+operator = 3
+
+[resource]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx, async_visible;
+
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// ColorOp:2
+	vec3 n_in2p0 = vec3(0.00000, 50.00000, 0.00000);
+	vec3 n_in2p1 = vec3(0.00000, 0.00000, 0.00000);
+	vec3 n_out2p0 = max(n_in2p0, n_in2p1);
+
+// Output:0
+	EMISSION = n_out2p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -273.472, 132.306 )
+nodes/fragment/2/node = SubResource( 1 )
+nodes/fragment/2/position = Vector2( 20, 300 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 5 )

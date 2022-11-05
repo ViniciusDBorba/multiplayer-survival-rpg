@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Items/Resource/WeaponResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+item_id = "prototype_pistol"
+item_name = "Prototype pistol"
+can_use_item = false
+item_max_stack = 1
+type = 2
+weapon_type = 0
+damage = 25.0

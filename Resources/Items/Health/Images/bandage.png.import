@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/bandage.png-109e551020fa63587f83cc38be1e2e85.image"
+
+[deps]
+
+source_file="res://Resources/Items/Health/Images/bandage.png"
+dest_files=[ "res://.import/bandage.png-109e551020fa63587f83cc38be1e2e85.image" ]
+
+[params]
+

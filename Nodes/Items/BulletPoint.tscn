@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SphereMesh" id=20]
+radius = 0.25
+height = 0.5
+
+[node name="BulletPoint" type="MeshInstance"]
+mesh = SubResource( 20 )
+material/0 = null

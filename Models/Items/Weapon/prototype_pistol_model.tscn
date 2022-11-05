@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 0.1, 0.12, 0.5 )
+
+[node name="prototype_pistol_model" type="MeshInstance"]
+transform = Transform( 1, 4.56777e-14, 5.21082e-29, -4.56777e-14, 1, 1.14078e-15, 0, -1.14078e-15, 1, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="shootPosition" type="Position3D" parent="."]
+transform = Transform( 1, 0, 2.88889e-34, 0, 1, -3.5022e-14, -2.8889e-34, 3.5022e-14, 1, 0, 0.04, -0.28 )

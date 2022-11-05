@@ -1,0 +1,9 @@
+{
+	0:{
+		"id": 2
+		"name": "Bandages"
+		"type": "HEALTH"
+		"image_path": "res://Nodes/Items/Images/Textures/HealthIconTexture.tres"
+		"max_stack": 3
+	}
+}
