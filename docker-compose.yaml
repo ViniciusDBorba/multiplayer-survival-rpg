@@ -1,0 +1,8 @@
+services:
+  # Start the agent with the latest version
+  multiplayer-survival-rpg:
+    image: "multiplayer-survival-rpg:latest"
+    container_name: multiplayer-survival-rpg-server
+    restart: "on-failure"
+    ports:
+    - "4444:4444"
